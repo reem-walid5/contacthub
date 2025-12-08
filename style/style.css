@@ -1,0 +1,296 @@
+/*************************** basics ***************************/
+.container{
+    width: 80%;
+}
+.mix-colors{
+    background-image: linear-gradient(120deg,#7828FD , #5936F8);
+}
+.purple{
+    color: #7F22FE;
+}
+.grey{
+    color: #6A7282;
+}
+.small-font{
+    font-size: 12px;
+}
+body{
+    background-color: #F3F7FD;
+}
+.meduim-font{
+    font-size: 14px;
+}
+/*************************** nav ***************************/
+.navbar{
+    background-color: rgb(253, 254, 254 ,0.9) !important;
+    /* width: 100%;
+    z-index: 5;
+    position: fixed; */
+}
+.icon-box{
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+}
+.b-contact{
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    transition: all 0.2s ease;
+}
+.b-contact:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgb(117, 41, 253 ,0.3);
+}
+.light-box{
+    transition: all 0.2s ease ;
+    color:#6A7282 ;
+    width: 40px;
+    height: 40px;
+    background-color: #FDFEFE; 
+    cursor: pointer;
+    border-radius: 12px;
+}
+.light-box:hover{
+    color: #000;
+    background-color: #F3F4F6;
+}
+.box-img{
+    width: 40px;
+    height: 40px;
+}
+.yellow{
+    color: #FFB900;
+}
+nav .form-control{
+    padding-block: 10px;
+    border-radius: 15px;
+}
+nav .form-control:focus{
+    box-shadow: 0 0 10px rgb(89, 54, 248 ,0.4);
+    border-color:#5936F8;
+}
+nav .form-select:focus{
+    box-shadow: 0 0 10px rgb(89, 54, 248 ,0.4);
+    border-color:#5936F8;
+}
+.form-select{
+    padding-block: 10px;
+    border-radius: 15px;
+}
+textarea{
+    resize: none;
+}
+.mix-blue{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: linear-gradient(120deg, #4495FD,#3484FE,#2371FE);
+}
+.btn-img{
+    background-color: #F9FAFB;
+    transition: all 0.2s ease;
+    border-radius: 10px;
+}
+.btn-img:hover{
+    background-color: #E5E7EB !important;
+}
+.form-check-input{
+    width: 25px;
+    height: 25px;
+    border-color: #212121;
+    cursor:pointer;
+}
+.style-image{
+    width:80px;
+    height:80px; 
+    object-fit:cover;
+}
+.style-imag0e2{
+    width:40px;
+    height:40px; 
+    object-fit:cover;
+}
+.form-check-input:checked {
+    background-color:#617884;
+    border-color:#617884;
+}
+.form-check-input:focus {
+    border-color: rgb(66, 66, 66);
+    outline: 0;
+    box-shadow: 0 0 rgba(13, 110, 253, .25);
+}
+.form-check label{
+    cursor: pointer;
+}
+/*************************** section ***************************/
+/*************************** three cards ***************************/
+.box{
+    width: 50px;
+    height: 50px;
+    background-color: #1A66FE;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgb(26, 102, 254 , 0.4);
+}
+.small-card{
+    border: 2px solid rgb(213, 215, 220, 0.3);
+    transition: all 0.2s ease;
+}
+.small-card:hover{
+    box-shadow: 0 4px 6px rgba(135, 141, 154, 0.3);
+}
+.mix-orange{
+    background-image: linear-gradient(120deg,#FFAA00,#FF7700);
+    box-shadow:0 5px 10px rgb(255, 119, 0 ,0.4);
+}
+.mix-red{
+    background-image: linear-gradient(120deg,#FC1A4E,#EA001B);
+    box-shadow: 0 5px 10px rgb(234, 0, 27 ,0.4);
+}
+/*************************** search ***************************/
+.input-group .form-control:focus{
+    box-shadow: 0 0 0 ;
+    border: 0;
+}
+.con{
+    border: 0 !important;
+}
+.input-group{
+    border: 2px solid rgb(213, 215, 220, 0.3);
+}
+/*************************** contacts ***************************/
+.item{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+.item-icon{
+    width: 20px;
+    height: 20px;
+    background-color: #DBEAFE;
+    color: #1A66FE;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.fav{
+    background-color: #FFB808;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    position: absolute;
+    top: 20px;
+    left: 15%;
+}
+.emergency{
+    background-color: #FF2B5C;
+    top: 65px;
+}
+.item-icon2{
+    width: 30px;
+    height: 30px;
+}
+.lighr-purple{
+    background-color: #EDE9FE;
+}
+.lighr-green{
+    background-color: #D0FAE5;
+}
+.green{
+    color: green;
+    transition: all 0.2s ease;
+}
+.lighr-red{
+    background-color: #FFF1F2;
+}
+.small-icons{
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+}
+.card-footer a{
+    text-decoration: none;
+}
+.light-green{
+    transition: all 0.2s ease;
+    background-color: #ECFDF5;
+}
+.light-green:hover{
+    background-color: #D0FAE5;
+}
+.b-purple{
+    transition: all 0.2s ease;
+    background-color: #F5F3FF;
+}
+.b-purple:hover{
+    background-color: #EDE9FE;
+}
+.b-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.b-icon:hover{
+    background-color: #F3F4F6;
+}
+.card-footer .star:focus,
+.card-footer .star:active {
+    background-color: #FEF3C6 !important;
+    color: #FFBD0F !important;
+}
+.card{
+    border: 2px solid #eef0f2;
+}
+.card-header{
+    background-color: #FFF8ED;
+}
+.b-light{
+    background-color:#FAFBFC;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.b-light:hover{
+    background-color: #FFFBEB;
+}
+.b-light a{
+    text-decoration: none;
+}
+.b-light:hover .light-green{
+    background-color: #00BC7D;
+}
+.b-light:hover .green{
+    color: #fff;
+}
+.header2{
+    background-color:#FEF2F2;
+    cursor: pointer;
+}
+.red{
+    color: red;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.b-light-red:hover .red{
+    color:#fff;
+}
+.light-red{
+    background-color: #FFE4E6;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.b-light-red:hover .light-red{
+    background-color: #FF2056;
+}
+.b-light-red{
+    background-color: #FAFBFC;
+    transition: all0.2s ease;
+    cursor: pointer;
+}
+.b-light-red:hover{
+    background-color: #FEF2F2;
+}
+.b-light-red a{
+    text-decoration: none;
+}
