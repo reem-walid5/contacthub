@@ -10,6 +10,7 @@ var eme = document.getElementById("eme");
 var editbtn = document.getElementById("editbtn");
 var updatebtn = document.getElementById("updatebtn");
 var Search = document.getElementById("Search");
+var userImageInput = document.getElementById("userImageInput");
 // initial the list of contacts
 var contactsList = JSON.parse(localStorage.getItem("contacts")) || [];
 // variables
@@ -37,7 +38,7 @@ function saveinfo(){
                 fav:fav.checked,
                 eme:eme.checked,
                 search:Search.value,
-                image:userImagePreview.src.includes("data:image") ? userImagePreview.src : "",
+                image: userImageInput.files.length > 0 ? userImageInput.files[0].name : "" 
             }
     // close form 
     var modal = bootstrap.Modal.getInstance(document.getElementById("exampleModal"));
@@ -78,7 +79,7 @@ function displayContacts() {
         <div class="col-12 col-sm-6">
                                 <div class="p-2 rounded-3 card">
                                 <div class="card-body d-flex flex-column gap-3">
-                                    <div class="d-flex align-items-center gap-3">${contactsList[i].image? `<img src="${contactsList[i].image}" class="rounded-circle" style="width:40px; height:40px; object-fit:cover;">`: `<div class="d-flex align-items-center justify-content-center mix-colors text-white item position-relative">${contactsList[i].name.split(' ').map(n => n[0]).join('').toUpperCase()}</div>`}
+                                    <div class="d-flex align-items-center gap-3">${contactsList[i].image? `<img src="./images/${contactsList[i].image}" class="style-imag0e2">`: `<div class="d-flex align-items-center justify-content-center mix-colors text-white item position-relative">${contactsList[i].name.split(' ').map(n => n[0]).join('').toUpperCase()}</div>`}
                                         <div class="d-flex flex-column gap-2">
                                             <h6 class="m-0">${contactsList[i].name}</h6>
                                             <div class="d-flex align-items-center gap-1">
@@ -195,8 +196,17 @@ function resetContacts() {
     Notes.value =""
     fav.checked =false
     eme.checked =false  
-    userImagePreview.src = "";
-    userImageInput.value = "";
+    if (userImageInput) {
+        userImageInput.value = "";
+    }
+    var inputs = [fullname, phoneNumber, emailAddress];
+
+    for (var i = 0; i < inputs.length; i++) {
+    inputs[i].classList.remove("is-valid", "is-invalid");
+    if (inputs[i].nextElementSibling) {
+        inputs[i].nextElementSibling.classList.add("d-none");
+    }
+    }
 }
 // remove contact
 function removecontact(index) {
@@ -238,7 +248,7 @@ function updateFavSection() {
             <div class="w-100">
                 <div class="d-flex align-items-center justify-content-between b-light p-2 rounded-2 mb-3">
                     <div class="d-flex align-items-center gap-2">
-                        ${contactsList[i].image? `<img src="${contactsList[i].image}" class="rounded-circle style-image2">`: `<div class="d-flex align-items-center justify-content-center small-icons mix-red text-white fw-semibold">${contactsList[i].name.split(' ').map(n => n[0]).join('').toUpperCase()}</div>`}
+                        ${contactsList[i].image? `<img src="./images/${contactsList[i].image}" class="rounded-circle style-image2">`: `<div class="d-flex align-items-center justify-content-center small-icons mix-red text-white fw-semibold">${contactsList[i].name.split(' ').map(n => n[0]).join('').toUpperCase()}</div>`}
                         <div class="d-flex flex-column">
                             <h6 class="m-0">${contactsList[i].name}</h6>
                             <span class="grey small-font">${contactsList[i].phone}</span>
@@ -280,7 +290,7 @@ function updateemesection() {
             <div class="w-100">
                                     <div class="d-flex align-items-center justify-content-between b-light-red p-2 rounded-2 mb-2">
                                         <div class="d-flex align-items-center gap-2">
-                                            ${contactsList[i].image? `<img src="${contactsList[i].image}" class="rounded-circle style-image2">`: `<div class="d-flex align-items-center justify-content-center small-icons mix-red text-white fw-semibold">${contactsList[i].name.split(' ').map(n => n[0]).join('').toUpperCase()}</div>`}
+                                            ${contactsList[i].image? `<img src="./images/${contactsList[i].image}" class="rounded-circle style-image2">`: `<div class="d-flex align-items-center justify-content-center small-icons mix-red text-white fw-semibold">${contactsList[i].name.split(' ').map(n => n[0]).join('').toUpperCase()}</div>`}
                                             <div class="d-flex flex-column">
                                                 <h6 class="m-0">${contactsList[i].name}</h6>
                                                 <span class="grey small-font">${contactsList[i].phone}</span>
@@ -329,8 +339,7 @@ function searchinput(){
         <div class="col-12 col-sm-6">
                                 <div class="p-2 rounded-3 card">
                                 <div class="card-body d-flex flex-column gap-3">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <div class="d-flex align-items-center justify-content-center mix-colors text-white item position-relative">MM</div>
+                                    <div class="d-flex align-items-center gap-3">${contactsList[i].image? `<img src="./images/${contactsList[i].image}" class="style-imag0e2">`: `<div class="d-flex align-items-center justify-content-center mix-colors text-white item position-relative">${contactsList[i].name.split(' ').map(n => n[0]).join('').toUpperCase()}</div>`}
                                         <div class="d-flex flex-column gap-2">
                                             <h6 class="m-0">${contactsList[i].name}</h6>
                                             <div class="d-flex align-items-center gap-1">
@@ -348,13 +357,13 @@ function searchinput(){
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-center gap-2">
-                                        <div class="d-flex align-items-center justify-content-center item-icon item-icon2 lighr-purple">
+                                        <div class="d-flex align-items-center justify-content-center item-icon item-icon2 lighr-purple ${contactsList[i].email ? '' : 'd-none'}">
                                             <i class="fa-solid fa-envelope purple"></i>
                                         </div>
                                         <span class="grey meduim-font fw-medium ">${contactsList[i].email}</span>
                                     </div>
                                     <div class="d-flex align-items-center gap-2">
-                                        <div class="d-flex align-items-center justify-content-center item-icon item-icon2 lighr-green">
+                                        <div class="d-flex align-items-center justify-content-center item-icon item-icon2 lighr-green ${contactsList[i].address ? '' : 'd-none'}">
                                             <i class="fa-solid fa-location-dot green"></i>
                                         </div>
                                         <span class="grey meduim-font fw-medium ">${contactsList[i].address}</span>
@@ -399,7 +408,7 @@ function searchinput(){
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex align-items-center justify-content-center b-icon">
                                         <i class="fa-solid fa-pen-alt grey" onclick="editcontact(${i})"></i>
-                                        </div> 
+                                        </div>
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <div class="d-flex align-items-center justify-content-center b-icon red" onclick="removecontact(${i})">
