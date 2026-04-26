@@ -1,0 +1,93 @@
+/*************************** Responsive Design ***************************/
+
+@media (max-width: 576px) {
+
+    .container{
+        width: 95%;
+    }
+
+    .navbar .container{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .col-4{
+        width: 100% !important;
+    }
+
+    .col-9,
+    .col-3{
+        width: 100% !important;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+
+    .b-contact{
+        width: 100%;
+    }
+
+    .icon-box{
+        width: 40px;
+        height: 40px;
+    }
+
+    .small-icons{
+        width: 35px;
+        height: 35px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    .card-footer{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+
+    .container{
+        width: 90%;
+    }
+
+    .col-4{
+        width: 100% !important;
+    }
+
+    .col-9{
+        width: 100% !important;
+    }
+
+    .col-3{
+        width: 100% !important;
+    }
+
+    .navbar .container{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .b-contact{
+        width: 180px;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+
+    .container{
+        width: 85%;
+    }
+
+    .col-9{
+        width: 100% !important;
+    }
+
+    .col-3{
+        width: 100% !important;
+        margin-top: 20px;
+    }
+}
